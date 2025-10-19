@@ -49,9 +49,6 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-
-  # View components for encapsulating view logic [https://viewcomponent.org/]
-  gem "view_component", "~> 3.8"
 end
 
 group :development do
@@ -65,4 +62,12 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# ui
 gem "tailwindcss-rails", "~> 4.3"
+# View components for encapsulating view logic [https://viewcomponent.org/]
+gem "view_component", "~> 3.8"
+
+gem "interactor", "~> 3.1"
+
+# padrao autenticação
+gem "devise", "~> 4.9"
