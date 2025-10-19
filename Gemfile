@@ -49,6 +49,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # View components for encapsulating view logic [https://viewcomponent.org/]
+  gem "view_component", "~> 3.8"
 end
 
 group :development do
