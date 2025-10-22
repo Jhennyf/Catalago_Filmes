@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id            :integer          not null, primary key
+#  title         :string
+#  synopsis      :text
+#  realease_year :integer
+#  duration      :integer
+#  director      :string
+#  user_id       :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+# Indexes
+#
+#  index_movies_on_user_id  (user_id)
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+filme_acao:
+  title: "Velozes e furiosos"
+  synopsis: "Eles programam muito rápido e fogem de bugs."
+  realease_year: 2023 
+  duration: 120
+  director: "Diretor A"
+  user: joao 
+  categories: [acao, drama]
+
+filme_comedia:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 

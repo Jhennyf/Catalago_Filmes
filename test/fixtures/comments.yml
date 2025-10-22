@@ -1,0 +1,34 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id             :integer          not null, primary key
+#  text           :text
+#  anonymous_name :string
+#  movie_id       :integer
+#  user_id        :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+# Indexes
+#
+#  index_comments_on_movie_id  (movie_id)
+#  index_comments_on_user_id   (user_id)
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+comentario_logado:
+  text: "Ótimo filme, muito rápido!"
+  movie: filme_acao 
+  user: joao                
+
+comentario_anonimo:
+  text: "Não gostei tanto, a sinopse era melhor."
+  movie: filme_acao 
+  anonymous_name: "Visitante123"
+  
+comentario_da_ana:
+  text: "Dei boas risadas!"
+  movie: filme_comedia 
+  user: ana                   
