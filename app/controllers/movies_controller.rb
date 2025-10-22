@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[show]
   def index
-    @q = Movie.ransack(params[:q])
-    @movies = @q.result
+    @movies = Movie.order(created_at: :desc).page(params[:page])
   end
 
   def show; end

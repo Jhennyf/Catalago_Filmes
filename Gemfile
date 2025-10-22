@@ -75,3 +75,6 @@ gem "devise", "~> 4.9"
 
 # gem para busca
 gem "ransack"
+
+# gem para paginação
+gem "kaminari"
