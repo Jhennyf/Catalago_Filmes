@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[show]
   def index
-    @movies = Movie.all
+    @q = Movie.ransack(params[:q])
+    @movies = @q.result
   end
 
   def show; end

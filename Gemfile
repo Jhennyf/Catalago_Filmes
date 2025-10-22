@@ -72,3 +72,6 @@ gem "interactor", "~> 3.1"
 
 # padrao autenticação
 gem "devise", "~> 4.9"
+
+# gem para busca
+gem "ransack"
