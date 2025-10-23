@@ -11,6 +11,7 @@
 #  user_id       :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  image_url     :string
 #
 # Indexes
 #
@@ -36,3 +37,84 @@ filme_comedia:
   director: "Diretora B"
   user: ana
   categories: [comedia] 
+
+filme_comedia_2:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_3:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_4:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_5:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_6:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_7:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_8:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_9:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia] 
+
+filme_comedia_10:
+  title: "Se bebeu nao case"
+  synopsis: "Uma história sobre código legado."
+  realease_year: 2024 
+  duration: 95
+  director: "Diretora B"
+  user: ana
+  categories: [comedia]

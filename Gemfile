@@ -78,3 +78,5 @@ gem "ransack"
 
 # gem para paginação
 gem "kaminari"
+
+gem "htmlbeautifier"
