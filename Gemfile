@@ -67,6 +67,8 @@ end
 gem "tailwindcss-rails", "~> 4.3"
 # View components for encapsulating view logic [https://viewcomponent.org/]
 gem "view_component", "~> 3.8"
+gem "simple_form", "~> 5.3"
+gem "heroicons"
 
 gem "interactor", "~> 3.1"
 
