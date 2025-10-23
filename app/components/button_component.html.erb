@@ -1,0 +1,10 @@
+<% if @icon %>
+  <button type="button" class="inline-flex gap-4 items-center justify-center rounded-md text-center font-medium hover:bg-opacity-90 <%= css %>" <%= html_options.map { |k, v| "#{k}='#{v}'" }.join(" ") %>>
+    <%= ApplicationController.helpers.heroicon(@icon) %>
+    <%= label %>
+  </button>
+<% else %>
+  <button type="button" class="inline-flex items-center justify-center rounded-md text-center font-medium hover:bg-opacity-90 <%= css %>" <%= html_options.map { |k, v| "#{k}='#{v}'" }.join(" ") %>>
+    <%= label %>
+  </button>
+<% end %>
