@@ -82,3 +82,5 @@ gem "ransack"
 gem "kaminari"
 
 gem "htmlbeautifier"
+
+gem "pg"

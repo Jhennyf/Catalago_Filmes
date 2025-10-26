@@ -25,8 +25,14 @@ test:
 # is mounted as a persistent Docker volume in config/deploy.yml.
 production:
   primary:
-    <<: *default
-    database: storage/production.sqlite3
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: <%= ENV.fetch("PG_DATABASE") { "catalog_film_production" } %>
+    username: <%= ENV.fetch("PG_USERNAME") { "postgres" } %>
+    password: <%= ENV.fetch("PG_PASSWORD") { "" } %>
+    host: <%= ENV.fetch("PG_HOST") { "localhost" } %>
+    port: <%= ENV.fetch("PG_PORT") { 5432 } %>
   cache:
     <<: *default
     database: storage/production_cache.sqlite3
