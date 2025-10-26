@@ -5,9 +5,20 @@ class MoviesController < ApplicationController
     @movies = Movie.ransack(params[:q]).result.order(created_at: :desc).page(params[:page])
   end
 
-  def new; end
+  def new
+    @movie = Movie.new
+  end
 
-  def create; end
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.user = current_user
+
+    if @movie.save
+      redirect_to @movie, notice: "Filme criado com sucesso."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def show; end
 
@@ -18,6 +29,14 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :synopsis, :release_year, :duration, :director, category_ids: [])
+    params.require(:movie).permit(
+      :title,
+      :synopsis,
+      :realease_year,
+      :duration,
+      :director,
+      :image_url,   
+      category_ids: []
+    )
   end
 end

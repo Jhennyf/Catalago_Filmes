@@ -1,0 +1,33 @@
+<div class="bg-black text-white min-h-screen pt-20 pb-12">
+  <div class="max-w-7xl mx-auto p-6">
+
+    <div class="flex items-center gap-6 border-b-2 border-red-600 pb-4 mb-8">
+      
+      <div class="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+        <%= heroicon("user", variant: :outline, options: { class: "w-14 h-14 text-white" }) %>
+      </div>
+      
+      <div>
+        <span class="text-lg text-gray-300">usuário</span>
+        <h2 class="text-4xl font-bold text-white"><%= @user.name %></h2>
+        
+        <%= link_to edit_user_registration_path, class: "flex items-center gap-2 text-gray-400 hover:text-white mt-1 transition" do %>
+          <%= heroicon("cog-6-tooth", variant: :solid, options: { class: "w-5 h-5" }) %>
+          <span class="text-sm font-medium tracking-widest">CONFIGURAÇÕES</span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">Meus Filmes Cadastrados</h1>
+      
+      <%= link_to new_movie_path, class: "flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-md transition text-sm" do %>
+        <%= heroicon("plus", variant: :solid, options: { class: "w-5 h-5" }) %>
+        <span>Adicionar Novo Filme</span>
+      <% end %>
+    </div>
+
+    <%= render(MovieCarouselComponent.new(title: "Meus Filmes", movies: @movies)) %>
+
+  </div>
+</div>
