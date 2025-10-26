@@ -3,32 +3,49 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="carousel"
 export default class extends Controller {
   static targets = ["track"]
+  currentIndex = 0
+  interval = null
 
   connect() {
-    this.index = 0
     this.slideCount = this.trackTarget.children.length
-    this.start()
-  }
-
-  start() {
-    this.timer = setInterval(() => this.next(), 6000)
-  }
-
-  next() {
-    this.index = (this.index + 1) % this.slideCount
-    this.update()
-  }
-
-  prev() {
-    this.index = (this.index - 1 + this.slideCount) % this.slideCount
-    this.update()
-  }
-
-  update() {
-    this.trackTarget.style.transform = `translateX(-${this.index * 100}%)`
+    this.slideWidth = this.trackTarget.children[0].offsetWidth
+    this.goToSlide(0)
+    this.startAutoplay()
   }
 
   disconnect() {
-    clearInterval(this.timer)
+    this.stopAutoplay()
+  }
+
+  prev() {
+    this.stopAutoplay()
+    this.currentIndex = (this.currentIndex - 1 + this.slideCount) % this.slideCount
+    this.goToSlide(this.currentIndex)
+    this.startAutoplay()
+  }
+
+  next() {
+    this.stopAutoplay()
+    this.currentIndex = (this.currentIndex + 1) % this.slideCount
+    this.goToSlide(this.currentIndex)
+    this.startAutoplay()
+  }
+
+  goToSlide(index) {
+    const offset = -index * this.slideWidth
+    this.trackTarget.style.transform = `translateX(${offset}px)`
+  }
+
+  startAutoplay() {
+    this.interval = setInterval(() => {
+      this.next()
+    }, 4000) 
+  }
+
+  stopAutoplay() {
+    if (this.interval) {
+      clearInterval(this.interval)
+      this.interval = null
+    }
   }
 }

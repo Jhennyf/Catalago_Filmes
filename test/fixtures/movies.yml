@@ -21,100 +21,91 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 filme_acao:
-  title: "Velozes e furiosos"
-  synopsis: "Eles programam muito rápido e fogem de bugs."
-  realease_year: 2023 
-  duration: 120
-  director: "Diretor A"
-  user: joao 
-  categories: [acao, drama]
+  title: "Velozes e Furiosos"
+  synopsis: "Corridas ilegais e ação nas ruas de Los Angeles."
+  realease_year: 2001
+  duration: 106
+  director: "Rob Cohen"
+  user: joao
+  categories: [acao]
+  image_url: "https://img.odcdn.com.br/wp-content/uploads/2023/03/velozesefuriosos10_5.jpg"
 
 filme_comedia:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_2:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_3:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_4:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_5:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_6:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_7:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_8:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_9:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
-  user: ana
-  categories: [comedia] 
-
-filme_comedia_10:
-  title: "Se bebeu nao case"
-  synopsis: "Uma história sobre código legado."
-  realease_year: 2024 
-  duration: 95
-  director: "Diretora B"
+  title: "Se Beber, Não Case"
+  synopsis: "Três amigos tentam lembrar o que aconteceu na noite anterior."
+  realease_year: 2009
+  duration: 100
+  director: "Todd Phillips"
   user: ana
   categories: [comedia]
+  image_url: "https://m.media-amazon.com/images/S/pv-target-images/cc04383b1003e57a93231155a7befd17d8327f17a768d77281054ffb25fcfe5a.jpg"
+
+filme_drama:
+  title: "O Poderoso Chefão"
+  synopsis: "A saga da família mafiosa Corleone."
+  realease_year: 1972
+  duration: 175
+  director: "Francis Ford Coppola"
+  user: joao
+  categories: [drama]
+  image_url: "https://d2d7ho1ae66ldi.cloudfront.net/ArquivoNoticias/7a6506ca-753d-11ec-aa6e-9587410378a2/chrome_2022-01-14_10-17-34.jpg"
+
+filme_romance:
+  title: "Titanic"
+  synopsis: "Um romance épico a bordo do navio Titanic."
+  realease_year: 1997
+  duration: 195
+  director: "James Cameron"
+  user: ana
+  categories: [drama, romance]
+  image_url: "https://www.theatrebloom.com/wp-content/uploads/2018/01/titanic-banner.jpg"
+
+filme_fantasia:
+  title: "Harry Potter e a Pedra Filosofal"
+  synopsis: "O início da jornada de Harry Potter no mundo da magia."
+  realease_year: 2001
+  duration: 152
+  director: "Chris Columbus"
+  user: ana
+  categories: [fantasia]
+  image_url: "https://ingresso-a.akamaihd.net/b2b/production/uploads/article/image/2549/7ababc2015043445b750ebc853a5f706.jpg"
+
+filme_suspense:
+  title: "Clube da Luta"
+  synopsis: "Dois homens formam um clube secreto de luta."
+  realease_year: 1999
+  duration: 139
+  director: "David Fincher"
+  user: joao
+  categories: [suspense]
+  image_url: "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/fa086dc9-2c08-4c47-9391-66c59aba3077/compose?aspectRatio=1.78&format=webp&width=1200"
+
+filme_animacao:
+  title: "Toy Story"
+  synopsis: "Brinquedos ganham vida quando os humanos não estão por perto."
+  realease_year: 1995
+  duration: 81
+  director: "John Lasseter"
+  user: ana
+  categories: [animacao]
+  image_url: "https://external-preview.redd.it/toy-story-5-in-the-works-at-disney-v0-2JH8PNYmbbZD-yojySeWj1jyKeY7PlNHgrOefz9m85w.jpg?width=1080&crop=smart&auto=webp&s=1dc034fe06472fb20f460cdeb7fde13aaad683c6"
+
+filme_aventura:
+  title: "Indiana Jones e os Caçadores da Arca Perdida"
+  synopsis: "Indiana Jones em busca da Arca da Aliança."
+  realease_year: 1981
+  duration: 115
+  director: "Steven Spielberg"
+  user: joao
+  categories: [aventura]
+  image_url: "https://m.media-amazon.com/images/S/pv-target-images/7f630af0770e193a9499b73990720080d940e099684f54126decdce89fa8da97.jpg"
+
+filme_documentario:
+  title: "Marcha dos Pinguins"
+  synopsis: "A jornada dos pinguins-imperadores na Antártida."
+  realease_year: 2005
+  duration: 80
+  director: "Luc Jacquet"
+  user: ana
+  categories: [documentario]
+  image_url: "https://www.primevideo.com/-/pt/detail/A-Marcha-dos-Pinguins/0SZPHE9CBEYXE0G7VPFU4041BH"

@@ -1,6 +1,6 @@
 <div data-carousel-target="track" class="flex w-full transition-transform duration-500">
     <% imagens.each do |imagem| %>
-    <div class="min-w-full flex-shrink-0">
+    <div class="w-full flex-shrink-0">
         <%= render(MovieBannerComponent.new(object: imagem)) %>
     </div>
     <% end %>

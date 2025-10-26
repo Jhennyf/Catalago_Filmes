@@ -1,0 +1,10 @@
+<nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl flex justify-center">
+  <%= simple_form_for @q, url: movies_path, method: :get, html: { class: "gap-2 border border-white rounded- w-1/2 mt-5" } do |f| %>
+    <div class="relative w-full">
+      <%= f.input :title_or_synopsis_cont, placeholder: "Pesquisar filmes...", label: false, input_html: { class: "px-10 py-2 text-white w-full pr-12" } %>
+      <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-white">
+        <%= heroicon("magnifying-glass", variant: :outline, options: { class: "w-6 h-6 cursor-pointer" }) %>
+      </button>
+    </div>
+  <% end %>
+</nav>

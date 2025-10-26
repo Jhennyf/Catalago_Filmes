@@ -28,4 +28,12 @@ class Movie < ApplicationRecord
   validates :realease_year, presence: :true
   validates :duration, presence: :true
   validates :director, presence: :true
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[created_at director duration id image_url realease_year synopsis title updated_at user_id]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    %w[categories]
+  end
 end

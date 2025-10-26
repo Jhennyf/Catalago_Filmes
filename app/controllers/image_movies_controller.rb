@@ -1,5 +1,5 @@
 class ImageMoviesController < ApplicationController
   def index
-    @images = Movie.select(:image_url, :synopsis, :title)
+    @images = Movie.select(:id, :image_url, :title, :synopsis)
   end
 end
