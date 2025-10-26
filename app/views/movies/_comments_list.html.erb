@@ -1,0 +1,10 @@
+<%# app/views/movies/_comments_list.html.erb %>
+<%= turbo_frame_tag "comments_list" do %>
+  <div class="space-y-8">
+    <% if movie.comments.any? %>
+      <%= render movie.comments.order(created_at: :desc) %>
+    <% else %>
+      <p class="text-gray-400">Este filme ainda não tem avaliações. Seja o primeiro a comentar!</p>
+    <% end %>
+  </div>
+<% end %>

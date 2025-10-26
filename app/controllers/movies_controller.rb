@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[show]
+  before_action :set_movie, only: [ :show, :destroy ]
 
   def index
     @movies = Movie.ransack(params[:q]).result.order(created_at: :desc).page(params[:page])
@@ -14,13 +14,21 @@ class MoviesController < ApplicationController
     @movie.user = current_user
 
     if @movie.save
-      redirect_to @movie, notice: "Filme criado com sucesso."
+      redirect_to user_path(current_user), notice: "Filme criado com sucesso."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def show; end
+  def show
+    @comment = @movie.comments.build
+    @comments = @movie.comments.order(created_at: :desc)
+  end
+
+  def destroy
+    @movie.destroy
+    redirect_to user_path(current_user), notice: "Filme excluído com sucesso."
+  end
 
   private
 
@@ -35,7 +43,7 @@ class MoviesController < ApplicationController
       :realease_year,
       :duration,
       :director,
-      :image_url,   
+      :image_url,
       category_ids: []
     )
   end

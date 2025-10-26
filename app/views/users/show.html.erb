@@ -27,7 +27,11 @@
       <% end %>
     </div>
 
-    <%= render(MovieCarouselComponent.new(title: "Meus Filmes", movies: @movies)) %>
-
+    <%= render(MovieCarouselComponent.new(
+          title: "Meus Filmes",
+          movies: @movies,
+          button_text: "Excluir filme",
+          button_path: ->(movie) { movie_path(movie) }
+        )) %>
   </div>
 </div>

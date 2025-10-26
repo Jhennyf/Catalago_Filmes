@@ -10,3 +10,4 @@ pin "swiper" # @11.2.10
 pin "swiper/bundle", to: "swiper--bundle.js" # @11.2.10
 pin "@stimulus-components/dropdown", to: "@stimulus-components--dropdown.js" # @3.0.0
 pin "stimulus-use" # @0.52.3
+pin "@stimulus-components/dialog", to: "@stimulus-components--dialog.js" # @1.0.1

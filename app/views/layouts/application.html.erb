@@ -23,8 +23,19 @@
 
   <body class="bg-black">
     <main>
+      <% if flash[:notice] %>
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg text-center min-w-[200px] max-w-xs">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg text-center min-w-[200px] max-w-xs">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
       <% unless devise_controller? %>
-       <%= render(MenuComponent.new(q: @q)) %>
+        <%= render(MenuComponent.new(q: @q)) %>
       <% end %>
       
       <%= yield %>

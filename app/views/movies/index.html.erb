@@ -1,5 +1,4 @@
 <div>
   <%= turbo_frame_tag "banner_images", src: image_movies_path %>
-  <%= render MovieCarouselComponent.new(title: "Novos Filmes", movies: @movies) %>
-  <%= render MovieCarouselComponent.new(title: "Melhores Filmes", movies: @movies) %>
+  <%= render MovieCarouselComponent.new(title: "Filmes", movies: @movies) %>
 </div>

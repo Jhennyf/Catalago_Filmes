@@ -1,0 +1,17 @@
+<div id="<%= dom_id(comment) %>" class="flex gap-4">
+  <div class="w-12 h-12 bg-red-600 rounded-full flex-shrink-0 flex items-center justify-center">
+    <%= heroicon("user", variant: :solid, options: { class: "w-6 h-6" }) %>
+  </div>
+  
+  <div class="flex-grow">
+    <span class="font-bold text-lg"><%= comment.user.try(:name) || comment.anonymous_name.presence || "Usuário Anônimo" %></span>
+    
+    <div class="flex items-center gap-1 mt-1">
+      <% 5.times do %>
+        <%= heroicon("star", variant: :solid, options: { class: "w-5 h-5 text-yellow-400" }) %>
+      <% end %>
+    </div>
+    
+    <p class="text-gray-300 mt-2"><%= comment.text %></p>
+  </div>
+</div>
