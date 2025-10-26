@@ -1,10 +1,39 @@
-<nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl flex justify-center">
-  <%= simple_form_for @q, url: movies_path, method: :get, html: { class: "gap-2 border border-white rounded- w-1/2 mt-5" } do |f| %>
-    <div class="relative w-full">
-      <%= f.input :title_or_synopsis_cont, placeholder: "Pesquisar filmes...", label: false, input_html: { class: "px-10 py-2 text-white w-full pr-12" } %>
-      <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-white">
-        <%= heroicon("magnifying-glass", variant: :outline, options: { class: "w-6 h-6 cursor-pointer" }) %>
-      </button>
+<nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl flex flex-row items-center justify-between px-4">
+  <div class="flex-1">
+
+    <%= simple_form_for @q, url: movies_path, method: :get, html: { class: "flex gap-2 border border-white rounded w-full" } do |f| %>
+      <div class="relative w-full">
+        <%= f.input :title_or_synopsis_cont, placeholder: "Pesquisar filmes...", label: false, input_html: { class: "px-10 py-2 text-white w-full pr-12 bg-transparent" } %>
+        <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-white">
+          <%= heroicon("magnifying-glass", variant: :outline, options: { class: "w-6 h-6 cursor-pointer" }) %>
+        </button>
+      </div>
+    <% end %>
+  </div>
+
+  <div data-controller="dropdown" class="relative ml-4 flex-shrink-0">
+    <button type="button"
+      class="flex items-center justify-center w-10 h-10 bg-white text-black rounded-full hover:bg-gray-200 transition"
+      data-action="dropdown#toggle click@window->dropdown#hide"
+      aria-label="Abrir menu do usuário">
+      <%= heroicon("user", variant: :outline, options: { class: "w-6 h-6" }) %>
+    </button>
+    <div
+      data-dropdown-target="menu"
+      class="hidden transition transform origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+      data-transition-enter-from="opacity-0 scale-95"
+      data-transition-enter-to="opacity-100 scale-100"
+      data-transition-leave-from="opacity-100 scale-100"
+      data-transition-leave-to="opacity-0 scale-95"
+    >
+      <% if helpers.user_signed_in? %>
+        <%= link_to "Adicionar Filme", new_movie_path, class: "block px-4 py-2 text-sm text-white hover:bg-gray-700" %>
+        <%= link_to "Editar Perfil", edit_user_registration_path, class: "block px-4 py-2 text-sm text-white hover:bg-gray-700" %>
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-red-400 hover:bg-gray-700" %>
+      <% else %>
+        <%= link_to "Entrar", new_user_session_path, class: "block px-4 py-2 text-sm text-white hover:bg-gray-700" %>
+        <%= link_to "Cadastrar", new_user_registration_path, class: "block px-4 py-2 text-sm text-white hover:bg-gray-700" %>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </nav>

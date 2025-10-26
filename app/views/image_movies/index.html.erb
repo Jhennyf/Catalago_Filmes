@@ -1,7 +1,13 @@
 <%= turbo_frame_tag "banner_images" do %>
-  <div data-controller="carousel" class="relative w-full h-[500px] overflow-hidden">
+  <div data-controller="carousel" class="relative w-full h-[500px] overflow-hidden bg-transparent">
     <%= render partial: "image_movies/image_movies", locals: { imagens: @images } %>
-    <button data-action="carousel#prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10">Anterior</button>
-    <button data-action="carousel#next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10">Próximo</button>
+
+    <button data-action="carousel#prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-white bg-opacity-50 text-black rounded-full hover:bg-opacity-75 focus:outline-none transition">
+      <%= heroicon("chevron-left", variant: :outline, options: { class: "w-6 h-6" }) %>
+    </button>
+
+    <button data-action="carousel#next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-white bg-opacity-50 text-black rounded-full hover:bg-opacity-75 focus:outline-none transition">
+      <%= heroicon("chevron-right", variant: :outline, options: { class: "w-6 h-6" }) %>
+    </button>
   </div>
 <% end %>

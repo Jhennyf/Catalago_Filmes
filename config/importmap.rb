@@ -8,3 +8,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@stimulus-components/carousel", to: "@stimulus-components--carousel.js" # @6.0.0
 pin "swiper" # @11.2.10
 pin "swiper/bundle", to: "swiper--bundle.js" # @11.2.10
+pin "@stimulus-components/dropdown", to: "@stimulus-components--dropdown.js" # @3.0.0
+pin "stimulus-use" # @0.52.3
