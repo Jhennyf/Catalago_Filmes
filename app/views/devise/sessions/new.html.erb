@@ -1,20 +1,49 @@
-<h2>Log in</h2>
+<div class="flex items-center justify-center min-h-screen px-4">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="max-w-md w-full bg-black bg-opacity-70 rounded-lg shadow-2xl p-8 backdrop-blur-sm border border-gray-700">
+
+    <h2 class="text-4xl font-bold text-center text-white">Login</h2>
+    <p class="text-center text-gray-300 mb-8">Faça login ou cadastre-se</p>
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs space-y-4">
+        
+        <%= f.input :email,
+                    label: "Email:",
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email", class: "w-full bg-gray-800 text-white border border-red-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" },
+                    label_html: { class: "text-gray-200" } %>
+
+        <%= f.input :password,
+                    label: "Senha:",
+                    required: false,
+                    input_html: { autocomplete: "current-password", class: "w-full bg-gray-800 text-white border border-red-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" },
+                    label_html: { class: "text-gray-200" } %>
+        
+        <% if devise_mapping.rememberable? %>
+          <div class="flex items-center">
+            <%= f.input_field :remember_me, as: :boolean, class: "h-4 w-4 rounded border-gray-700 bg-gray-800 text-red-600 focus:ring-red-500" %>
+            <%= f.label :remember_me, "Lembrar de mim", class: "ml-2 block text-sm text-gray-300" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="form-actions mt-8">
+        <%= f.button :submit, "Login", class: "w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md text-lg transition duration-200" %>
+      </div>
+    <% end %>
+
+    <div class="mt-6 text-center space-y-2">
+      <div>
+        <%= link_to "Não tem conta? Cadastre-se", new_registration_path(resource_name), class: "text-gray-300 hover:text-white hover:underline" %>
+      </div>
+      <div>
+        <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-sm text-gray-400 hover:text-white hover:underline" %>
+      </div>
+    </div>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

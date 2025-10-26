@@ -23,7 +23,10 @@
 
   <body class="bg-black">
     <main>
-      <%= render(MenuComponent.new(q: @q)) %>
+      <% unless devise_controller? %>
+       <%= render(MenuComponent.new(q: @q)) %>
+      <% end %>
+      
       <%= yield %>
     </main>
   </body>
