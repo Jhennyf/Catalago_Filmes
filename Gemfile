@@ -64,7 +64,7 @@ group :test do
 end
 
 # ui
-gem "tailwindcss-rails", "~> 4.3"
+gem "tailwindcss-rails", "~> 4.4"
 # View components for encapsulating view logic [https://viewcomponent.org/]
 gem "view_component", "~> 3.8"
 gem "simple_form", "~> 5.3"
